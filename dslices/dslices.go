@@ -1,4 +1,4 @@
-package dslices
+package dSlices
 
 func MaxInts(nums []int) int {
 	maxNum := nums[0]
