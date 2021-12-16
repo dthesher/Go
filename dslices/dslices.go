@@ -9,3 +9,18 @@ func MaxInts(nums []int) int {
 	}
 	return maxNum
 }
+
+/**
+* Check for the element is available or not in slice.
+* @param "slice" slice identifier,
+*        "element" the num or string you wish to check.
+* @return this Student's name.
+ */
+func Contains(slice []interface{}, element interface{}) bool {
+	for _, a := range slice {
+		if a == element {
+			return true
+		}
+	}
+	return false
+}
