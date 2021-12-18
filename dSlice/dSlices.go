@@ -18,13 +18,18 @@ func MaxInts(nums []int) int {
 *        "element" the num or string you wish to check.
 * @return this Student's name.
  */
-func Contains(slice []interface{}, element interface{}) bool {
-	for _, a := range slice {
-		if a == element {
-			return true
+//// Make sure to pass second param: element with type casting if it is not "int"
+//// Returns -1 for index if it does not find element in slice
+func Contains(slice interface{}, element interface{}) int {
+	slc := InterfaceSlice(slice)
+	if slc != nil {
+		for i, a := range slc {
+			if a == element {
+				return i
+			}
 		}
 	}
-	return false
+	return -1
 }
 
 /**
