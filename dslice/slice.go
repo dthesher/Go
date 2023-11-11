@@ -1,6 +1,9 @@
 package dslice
 
-import "reflect"
+import (
+	"math"
+	"reflect"
+)
 
 func MaxInts(nums []int) int {
 	maxNum := nums[0]
@@ -56,4 +59,19 @@ func InterfaceSlice(slice interface{}) []interface{} {
 	}
 
 	return ret
+}
+
+func MinFromArray(arr []int) int {
+	if len(arr) == 0 {
+		panic("Empty array")
+	}
+
+	min := math.MaxInt
+	for _, value := range arr {
+		if value < min {
+			min = value
+		}
+	}
+
+	return min
 }
