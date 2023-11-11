@@ -1,4 +1,4 @@
-package dSlice
+package dslice
 
 import "reflect"
 

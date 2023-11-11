@@ -1,4 +1,4 @@
-package dMath
+package dmath
 
 /* Pow() will return power on num */
 func Pow(num int, power int) int {
