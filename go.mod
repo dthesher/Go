@@ -1,3 +1,3 @@
-module github.com/ace_d/go
+module github.com/dthesher/go
 
 go 1.17
