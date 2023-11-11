@@ -18,113 +18,113 @@ func NewLinkedList() *LinkedList {
 	return &LinkedList{}
 }
 
-// Append adds a new node with the given data to the end of the linked list
-func (ll *LinkedList) Append(data int) {
-	newNode := &Node{data: data, next: nil}
-	if ll.head == nil {
-		ll.head = newNode
+// Append adds a new node with the given Data to the end of the linked list
+func (ll *LinkedList) Append(Data int) {
+	newNode := &Node{Data: Data, Next: nil}
+	if ll.Head == nil {
+		ll.Head = newNode
 		return
 	}
-	current := ll.head
-	for current.next != nil {
-		current = current.next
+	current := ll.Head
+	for current.Next != nil {
+		current = current.Next
 	}
-	current.next = newNode
+	current.Next = newNode
 }
 
 // Display prints the elements of the linked list
 func (ll *LinkedList) Display() {
-	current := ll.head
+	current := ll.Head
 	for current != nil {
-		fmt.Printf("%d -> ", current.data)
-		current = current.next
+		fmt.Printf("%d -> ", current.Data)
+		current = current.Next
 	}
 	fmt.Println("nil")
 }
 
 // Search searches for a given value in the linked list
 func (ll *LinkedList) Search(value int) *Node {
-	current := ll.head
+	current := ll.Head
 	for current != nil {
-		if current.data == value {
+		if current.Data == value {
 			return current
 		}
-		current = current.next
+		current = current.Next
 	}
 	return nil
 }
 
 // Delete removes the first occurrence of a value from the linked list
 func (ll *LinkedList) Delete(value int) {
-	if ll.head == nil {
+	if ll.Head == nil {
 		return
 	}
 
-	if ll.head.data == value {
-		ll.head = ll.head.next
+	if ll.Head.Data == value {
+		ll.Head = ll.Head.Next
 		return
 	}
 
-	current := ll.head
-	for current.next != nil && current.next.data != value {
-		current = current.next
+	current := ll.Head
+	for current.Next != nil && current.Next.Data != value {
+		current = current.Next
 	}
 
-	if current.next == nil {
+	if current.Next == nil {
 		return
 	}
 
-	current.next = current.next.next
+	current.Next = current.Next.Next
 }
 
-// InsertAfter inserts a new node with the given data after a specific node
-func (ll *LinkedList) InsertAfter(prevNode *Node, data int) {
+// InsertAfter inserts a new node with the given Data after a specific node
+func (ll *LinkedList) InsertAfter(prevNode *Node, Data int) {
 	if prevNode == nil {
 		fmt.Println("Previous node cannot be nil")
 		return
 	}
 
-	newNode := &Node{data: data, next: prevNode.next}
-	prevNode.next = newNode
+	newNode := &Node{Data: Data, Next: prevNode.Next}
+	prevNode.Next = newNode
 }
 
 // Reverse reverses the linked list in-place
 func (ll *LinkedList) Reverse() {
 	var prev *Node = nil
-	current := ll.head
-	var next *Node = nil
+	current := ll.Head
+	var Next *Node = nil
 
 	for current != nil {
-		next = current.next
-		current.next = prev
+		Next = current.Next
+		current.Next = prev
 		prev = current
-		current = next
+		current = Next
 	}
 
-	ll.head = prev
+	ll.Head = prev
 }
 
 // Sort performs a simple bubble sort on the linked list
 func (ll *LinkedList) Sort() {
-	if ll.head == nil {
+	if ll.Head == nil {
 		return
 	}
 
 	swapped := true
 	for swapped {
 		swapped = false
-		current := ll.head
-		for current.next != nil {
-			if current.data > current.next.data {
-				current.data, current.next.data = current.next.data, current.data
+		current := ll.Head
+		for current.Next != nil {
+			if current.Data > current.Next.Data {
+				current.Data, current.Next.Data = current.Next.Data, current.Data
 				swapped = true
 			}
-			current = current.next
+			current = current.Next
 		}
 	}
 }
 
-// GetHead returns the head of the linked list
+// GetHead returns the Head of the linked list
 func (list *LinkedList) GetHead() *Node {
-	return list.head
+	return list.Head
 }
