@@ -123,3 +123,8 @@ func (ll *LinkedList) Sort() {
 		}
 	}
 }
+
+// GetHead returns the head of the linked list
+func (list *LinkedList) GetHead() *Node {
+	return list.head
+}
