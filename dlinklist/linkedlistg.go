@@ -4,13 +4,13 @@ import "fmt"
 
 // Node represents a node in the linked list
 type Node struct {
-	data int
-	next *Node
+	Data int
+	Next *Node
 }
 
 // LinkedList represents a singly linked list
 type LinkedList struct {
-	head *Node
+	Head *Node
 }
 
 // NewLinkedList initializes and returns a new linked list
